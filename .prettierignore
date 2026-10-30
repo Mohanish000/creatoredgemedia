@@ -1,0 +1,10 @@
+.next
+.next-e2e
+node_modules
+out
+package-lock.json
+playwright-report
+test-results
+reports
+public
+AGENTS.md

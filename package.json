@@ -1,0 +1,45 @@
+{
+  "name": "creatoredge-media",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check:content": "tsx scripts/check-content.ts",
+    "analyze": "ANALYZE=true next build --webpack",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "verify": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run check:content && npm run build && npm run test:e2e"
+  },
+  "dependencies": {
+    "lucide-react": "^1.60.0",
+    "motion": "^14.4.0",
+    "next": "16.4.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@next/bundle-analyzer": "^16.4.2",
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "chrome-launcher": "^1.2.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "lighthouse": "^13.5.0",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.5"
+  }
+}

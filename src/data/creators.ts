@@ -1,0 +1,157 @@
+import type { Creator } from "@/types/content";
+import { validateCreators } from "@/lib/content-guards";
+
+// Names come from the client's creator lists. Photos are the creators' YouTube channel profile pictures (Anamika Sangwan's was supplied directly); categories have NOT been supplied. Social links come from the client's creator sheet.
+// To complete a creator: drop a real photo in /public/images/creators/ (4:5, 1200px+ wide), point `image.src`
+// at it, remove `photoPending`, and add youtubeUrl / instagramUrl (HTTPS only) and `category` if wanted.
+// Creators are shown highest YouTube subscribers first (`youtubeSubscribers`, a snapshot; no link = last).
+// Categories are optional: the filter chips appear automatically once an agency has 2+ distinct categories.
+const youtubePhoto = (id: string, name: string) => ({
+  src: `/images/creators/${id}.jpg`,
+  alt: `${name}, YouTube channel profile picture`,
+  width: 900,
+  height: 900,
+});
+
+export const creators = validateCreators([
+  {
+    id: "rohit-shaw",
+    name: "Rohit Shaw",
+    agency: "creator-edge",
+    image: youtubePhoto("rohit-shaw", "Rohit Shaw"),
+    youtubeUrl: "https://www.youtube.com/@Rohitshawiitd",
+    youtubeSubscribers: 252000,
+    instagramUrl: "https://www.instagram.com/rohitshawiitd",
+  },
+  {
+    id: "rank-boost",
+    name: "Rank Boost",
+    agency: "creator-edge",
+    image: youtubePhoto("rank-boost", "Rank Boost"),
+    youtubeUrl: "https://www.youtube.com/@rankboostsshubhamkumar",
+    youtubeSubscribers: 87800,
+    instagramUrl: "https://www.instagram.com/rankboost_official/",
+  },
+  {
+    id: "jee-nerds",
+    name: "JEE Nerds",
+    agency: "creator-edge",
+    image: youtubePhoto("jee-nerds", "JEE Nerds"),
+    youtubeUrl: "https://www.youtube.com/@JEENerds",
+    youtubeSubscribers: 67100,
+    instagramUrl: "https://www.instagram.com/jee.nerds/",
+  },
+  {
+    id: "revive",
+    name: "Revive",
+    agency: "creator-edge",
+    image: youtubePhoto("revive", "Revive"),
+    youtubeUrl: "https://www.youtube.com/@ArpitaVerma-av15",
+    youtubeSubscribers: 58100,
+  },
+  {
+    id: "aryan-sehgal",
+    name: "Aryan Sehgal",
+    agency: "creator-edge",
+    image: youtubePhoto("aryan-sehgal", "Aryan Sehgal"),
+    youtubeUrl: "https://www.youtube.com/@aryan_bhaiya_2908",
+    youtubeSubscribers: 233000,
+    instagramUrl: "https://www.instagram.com/aryan_bhaiya2908/",
+  },
+  {
+    id: "vivaan-gupta",
+    name: "Vivaan Gupta",
+    agency: "creator-edge",
+    image: youtubePhoto("vivaan-gupta", "Vivaan Gupta"),
+    youtubeUrl: "https://www.youtube.com/@vivaanguptaiiitpune",
+    youtubeSubscribers: 118000,
+    instagramUrl: "https://www.instagram.com/vivaangupta.official/",
+  },
+  {
+    id: "adarsh-barnwal",
+    name: "Adarsh Barnwal",
+    agency: "creator-edge",
+    image: youtubePhoto("adarsh-barnwal", "Adarsh Barnwal"),
+    youtubeUrl: "https://www.youtube.com/@adarshbarnwal",
+    youtubeSubscribers: 241000,
+  },
+  {
+    id: "ashish-mukharya",
+    name: "Ashish Mukharya",
+    agency: "creator-edge",
+    image: youtubePhoto("ashish-mukharya", "Ashish Mukharya"),
+    youtubeUrl: "https://www.youtube.com/@ashishmukharya",
+    youtubeSubscribers: 14100,
+  },
+  {
+    id: "bhavya-deshwal",
+    name: "Bhavya Deshwal",
+    agency: "creator-edge",
+    image: youtubePhoto("bhavya-deshwal", "Bhavya Deshwal"),
+    shortBio: "IIT Delhi",
+    youtubeUrl: "https://www.youtube.com/@bhavaydeshwal",
+    youtubeSubscribers: 107000,
+    instagramUrl: "https://www.instagram.com/bhavaydeshwal/",
+  },
+  {
+    id: "joking-vlogs",
+    name: "Joking Vlogs",
+    agency: "campus-edge",
+    image: youtubePhoto("joking-vlogs", "Joking Vlogs"),
+    youtubeUrl: "https://www.youtube.com/@jokingvlogs",
+    youtubeSubscribers: 34800,
+  },
+  {
+    id: "jee-with-ajay",
+    name: "JEE with Ajay",
+    agency: "campus-edge",
+    image: youtubePhoto("jee-with-ajay", "JEE with Ajay"),
+    youtubeUrl: "https://www.youtube.com/@ajay_singh",
+    youtubeSubscribers: 233000,
+    instagramUrl: "https://www.instagram.com/ajaysinghh_77/",
+  },
+  {
+    id: "anamika-sangwan",
+    name: "Anamika Sangwan",
+    agency: "campus-edge",
+    image: {
+      src: "/images/creators/anamika-sangwan.png",
+      alt: "Anamika Sangwan",
+      width: 810,
+      height: 768,
+    },
+    instagramUrl: "https://www.instagram.com/anah.mika_/",
+  },
+  {
+    id: "zack-vlogs",
+    name: "Zack vlogs",
+    agency: "campus-edge",
+    image: youtubePhoto("zack-vlogs", "Zack vlogs"),
+    youtubeUrl: "https://www.youtube.com/@zackvlogs24",
+    youtubeSubscribers: 33500,
+  },
+  {
+    id: "vision-realm",
+    name: "Vision realm",
+    agency: "campus-edge",
+    image: youtubePhoto("vision-realm", "Vision realm"),
+    youtubeUrl: "https://www.youtube.com/@visionrealm-nitk",
+    youtubeSubscribers: 13500,
+  },
+  {
+    id: "akuls-journal",
+    name: "Akuls journal",
+    agency: "campus-edge",
+    image: youtubePhoto("akuls-journal", "Akuls journal"),
+    youtubeUrl: "https://www.youtube.com/@geekygrind",
+    youtubeSubscribers: 15700,
+  },
+  {
+    id: "yugam-gupta",
+    name: "Yugam gupta",
+    agency: "campus-edge",
+    image: youtubePhoto("yugam-gupta", "Yugam gupta"),
+    youtubeUrl: "https://www.youtube.com/@yugam_gupta6",
+    youtubeSubscribers: 8560,
+  },
+] satisfies readonly Creator[]);
